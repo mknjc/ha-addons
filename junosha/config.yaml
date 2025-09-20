@@ -1,0 +1,41 @@
+name: JunOsHa
+version: "0.0.1"
+slug: juniper
+description: Juniper Switch Parser for Home Assistant
+#url: "https://github.com/mknjc/junosha/tree/main/"
+image: ghcr.io/mknjc/junosha/{arch}
+arch:
+  - aarch64
+  - amd64
+init: false
+ports:
+  9010/tcp: 9010
+  8000/tcp: 8000
+options:
+  dataSizeScale: "NONE"
+  transferRateScale: "NONE"
+  calculateRate: false
+  updateIntervalSek: 30
+  mqtt:
+    host: null
+    user: null
+    password: null
+    discoveryRoot: "homeassistant"
+  switch:
+    host: null
+    user: null
+    password: null
+schema:
+  dataSizeScale: "list(NONE|KIBI|MEBI|GIBI)"
+  transferRateScale: "list(NONE|KIBI|MEBI|GIBI)"
+  calculateRate: bool
+  updateIntervalSek: int
+  mqtt:
+    host: str
+    user: str
+    password: password
+    discoveryRoot: str
+  switch:
+    host: str
+    user: str
+    password: password
